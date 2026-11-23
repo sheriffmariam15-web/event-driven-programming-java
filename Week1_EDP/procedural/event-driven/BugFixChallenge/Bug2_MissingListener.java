@@ -1,4 +1,3 @@
-package BugFixChallenge;
 import javax.swing.*;
 import java.awt.*;
 

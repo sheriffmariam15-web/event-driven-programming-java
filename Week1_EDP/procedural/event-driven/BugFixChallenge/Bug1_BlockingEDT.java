@@ -1,4 +1,3 @@
-package BugFixChallenge;
 import javax.swing.*;
 
 public class Bug1_BlockingEDT extends JFrame {
