@@ -1,37 +1,16 @@
-public class CurrentConditionsDisplay
-        implements Observer, DisplayElement {
-
-    private float temperature;
-    private float humidity;
-
-    private Subject weatherData;
-
-    public CurrentConditionsDisplay(Subject weatherData) {
-
-        this.weatherData = weatherData;
-
-        weatherData.registerObserver(this);
-    }
+// ============================================================
+// CURRENT CONDITIONS DISPLAY
+// ============================================================
+// Displays the latest temperature and humidity values.
+// This observer reacts whenever WeatherData changes.
+//
+public class CurrentConditionsDisplay implements Observer {
 
     @Override
-    public void update(float temperature,
-                       float humidity,
-                       float pressure) {
+    public void update(float temperature, float humidity, float pressure) {
 
-        this.temperature = temperature;
-        this.humidity = humidity;
-
-        display();
-    }
-
-    @Override
-    public void display() {
-
-        System.out.println(
-                "Current Conditions: "
-                        + temperature
-                        + "°C and "
-                        + humidity
-                        + "% humidity");
+        System.out.println("  [Current] Temp: "
+                + temperature + "°C, "
+                + "Humidity: " + humidity + "%");
     }
 }
